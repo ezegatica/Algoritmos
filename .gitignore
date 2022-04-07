@@ -1,0 +1,4 @@
+# Este archivo se encarga de ignorar los archivos binarios durante la subida a GitHub
+*
+!/**/
+!*.*
