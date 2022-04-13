@@ -1,7 +1,9 @@
 #include <iostream>
 
 using namespace std;
-
+/*
+    2) Dado un número que se ingresa por teclado, informar si es par o impar.
+*/
 int main()
 {
     int nro, resto;
