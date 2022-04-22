@@ -55,8 +55,10 @@ int main()
             break;
         case 2:
             cantidadPuerto2++;
+            break;
         case 3:
             cantidadPuerto3++;
+            break;
         default:
             break;
         }
