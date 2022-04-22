@@ -7,8 +7,35 @@ valores):
 a) El valor máximo negativo
 b) El valor mínimo positivo
 d) El promedio de todos los valores.
-*/
+*/ 
 int main() {
-    
+    int cantidad = 0, suma = 0, promedio = 0;
+    int maximoNegativo = 0, minimoPositivo = 0;
+    while(true){
+        int input;
+        cout << "Ingrese un numero: ";
+        cin >> input;
+        if(input == 0){
+            break;
+        }
+        if (maximoNegativo == 0 && input < 0){
+            maximoNegativo = input;
+        }
+        if (minimoPositivo == 0 && input > 0){
+            minimoPositivo = input;
+        }
+        if (input > maximoNegativo && input < 0){
+            maximoNegativo = input;
+        }
+        if (input < minimoPositivo && input > 0){
+            minimoPositivo = input;
+        }
+        suma += input;
+        cantidad++;
+    }
+    promedio = suma / cantidad;
+    cout << "El valor maximo negativo es: " << maximoNegativo << endl;
+    cout << "El valor minimo positivo es: " << minimoPositivo << endl;
+    cout << "El promedio de todos los valores es: " << promedio << endl;
     return 0;
 }
