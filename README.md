@@ -8,5 +8,3 @@
 incompletos:
 - 3.R.08
 - 3.MM.07
-- 3.MM.08
-- 3.MM.10
