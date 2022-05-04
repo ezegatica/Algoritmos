@@ -8,29 +8,52 @@ imprimir la cantidad de tiros, el máximo puntaje obtenido, y el puntaje promedi
 */
 int main()
 {
-    int puntaje = 0;
+    int puntaje;
+    int puntajeTotal = 0;
     int puntajeMaximo = 0;
     int cantidadTiros = 0;
-    while (true)
+    char continuar = 's';
+    while (continuar != 'N' || continuar != 'n')
     {
-        // Asumo que los dados los debe poner el jugador
-        int dado1 = 0;
-        int dado2 = 0;
-        int dado3 = 0;
-        int dado4 = 0;
-        int dado5 = 0;
-        cout << "Ingrese el primer dado: ";
-        cin >> dado1;
-        cout << "Ingrese el segundo dado: ";
-        cin >> dado2;
-        cout << "Ingrese el tercer dado: ";
-        cin >> dado3;
-        cout << "Ingrese el cuarto dado: ";
-        cin >> dado4;
-        cout << "Ingrese el quinto dado: ";
-        cin >> dado5;
-
+        puntaje = 0;
+        int mayor1;
+        int mayor2;
+        for (unsigned i = 1; i <= 5; i++)
+        {
+            int input;
+            cout << "Ingrese un valor del dado (vamos por el " << i << "): " << endl;
+            cin >> input;
+            if (i == 1)
+            {
+                mayor1 = input;
+                mayor2 = input;
+            }
+            else
+            {
+                if (input > mayor1)
+                {
+                    mayor2 = mayor1;
+                    mayor1 = input;
+                }
+                else if (input > mayor2)
+                {
+                    mayor2 = input;
+                }
+            }
+        }
+        puntaje += mayor1 + mayor2;
+        cout << "Puntaje de esta tirada: " << puntaje << endl;
+        if (puntaje > puntajeMaximo)
+        {
+            puntajeMaximo = puntaje;
+        }
         cantidadTiros++;
+        puntajeTotal += puntaje;
+        cout << "Continua? S/N" << endl;
+        cin >> continuar;
     }
+    cout << "Cantidad de tiros: " << cantidadTiros << endl;
+    cout << "Puntaje máximo: " << puntajeMaximo << endl;
+    cout << "Puntaje promedio: " << puntajeTotal / cantidadTiros << endl;
     return 0;
 }
