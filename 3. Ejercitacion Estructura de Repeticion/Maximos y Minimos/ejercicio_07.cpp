@@ -19,11 +19,8 @@ int main()
         int dado3 = 0;
         int dado4 = 0;
         int dado5 = 0;
-        int* dadoMayor1;
-        int* dadoMayor2;
         cout << "Ingrese el primer dado: ";
         cin >> dado1;
-        checkMayor(dado1, dadoMayor1, dadoMayor2);
         cout << "Ingrese el segundo dado: ";
         cin >> dado2;
         cout << "Ingrese el tercer dado: ";
@@ -36,15 +33,4 @@ int main()
         cantidadTiros++;
     }
     return 0;
-}
-int checkMayor(int dado, int * dadoMayor1, int * dadoMayor2){
-    if (&dado > dadoMayor1)
-        { // Che me re perdi ayuda
-            dadoMayor2 = &dadoMayor1;
-            dadoMayor1 = dado;
-        }
-        else if (dado > dadoMayor2)
-        {
-            dadoMayor2 = dado;
-        }
 }

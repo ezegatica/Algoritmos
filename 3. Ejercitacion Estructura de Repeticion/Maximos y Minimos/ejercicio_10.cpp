@@ -23,6 +23,7 @@ int main()
     int vuelosMensuales = 0;
     int vueloMasRecaudado = 0;
     int cantidadMasRecaudada = 0;
+    int asientosLibresMasRecuadado = 0;
     cout << "Ingrese la cantidad de vuelos realizados en el mes: ";
     cin >> vuelosMensuales;
     for (int i = 1; i <= vuelosMensuales; i++)
@@ -59,9 +60,10 @@ int main()
         if (i == 1 || importeTotal > cantidadMasRecaudada) { // "Si es el primer vuelo"
             vueloMasRecaudado = vuelo;
             cantidadMasRecaudada = importeTotal;
+            asientosLibresMasRecuadado = asientos - pasajeros;
         }
     }
-    cout << "El vuelo que más recaudó fue el " << vueloMasRecaudado << " con un total de $" << cantidadMasRecaudada << endl;
+    cout << "El vuelo que más recaudó fue el " << vueloMasRecaudado << " con un total de $" << cantidadMasRecaudada << " y tenía " << asientosLibresMasRecuadado << " asientos libres." << endl;
 
     return 0;
 }
